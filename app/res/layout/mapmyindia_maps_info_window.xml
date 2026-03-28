@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mapmyindia.sdk.maps.annotations.BubbleLayout android:orientation="vertical" android:paddingLeft="8.0dp" android:paddingRight="8.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="8.0dp" android:paddingEnd="8.0dp" app:mapmyindia_maps_bl_arrowDirection="bottom" app:mapmyindia_maps_bl_arrowHeight="8.0dp" app:mapmyindia_maps_bl_arrowPosition="50.0dp" app:mapmyindia_maps_bl_arrowWidth="8.0dp" app:mapmyindia_maps_bl_bubbleColor="@android:color/white" app:mapmyindia_maps_bl_cornersRadius="8.0dp" app:mapmyindia_maps_bl_strokeColor="@android:color/darker_gray" app:mapmyindia_maps_bl_strokeWidth="1.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="180.0dp" android:layout_height="wrap_content" android:layout_margin="4.0dp">
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/info_window_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="12.0dp" />
+        <RelativeLayout android:id="@id/layout_total_cases" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dp">
+            <TextView android:id="@id/txt_total_case" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mapmyindia_maps_total_cases" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentStart="true" />
+            <TextView android:layout_gravity="end" android:id="@id/total_cases" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dp" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_marginStart="2.0dp" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_total_recover" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mapmyindia_maps_total_recovered" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentStart="true" />
+            <TextView android:layout_gravity="end" android:id="@id/total_recovered" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dp" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_marginStart="2.0dp" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_total_death" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mapmyindia_maps_total_death" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentStart="true" />
+            <TextView android:layout_gravity="end" android:id="@id/total_death" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dp" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_marginStart="2.0dp" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <TextView android:id="@id/remarks" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dp" />
+        <TextView android:id="@id/description" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dp" />
+        <TextView android:id="@id/source" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" />
+    </LinearLayout>
+</com.mapmyindia.sdk.maps.annotations.BubbleLayout>

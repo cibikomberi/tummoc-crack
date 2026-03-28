@@ -1,0 +1,8 @@
+.class public interface abstract Lkotlin/reflect/KAnnotatedElement;
+.super Ljava/lang/Object;
+.source "KAnnotatedElement.kt"
+
+
+# annotations
+.annotation runtime Lkotlin/Metadata;
+.end annotation

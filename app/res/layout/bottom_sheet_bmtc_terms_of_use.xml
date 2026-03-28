@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/bottom_sheet_bmtc_terms_of_use_0" android:paddingLeft="@dimen/dp_16" android:paddingTop="@dimen/dp_24" android:paddingRight="@dimen/dp_16" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rvTermsOfUse" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <include android:id="@id/layoutNoInternet" android:visibility="gone" layout="@layout/layout_no_internet" />
+    <include android:id="@id/layoutNoData" android:visibility="gone" layout="@layout/layout_no_data" />
+</androidx.constraintlayout.widget.ConstraintLayout>

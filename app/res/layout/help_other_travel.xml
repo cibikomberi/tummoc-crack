@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/linearLayout" android:background="@color/colorWhite" android:padding="@dimen/dp_14" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="?android:selectableItemBackground"
+  xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.AppCompatImageView android:layout_width="@dimen/dp_30" android:layout_height="@dimen/dp_30" app:srcCompat="@drawable/ic_report" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dp_12">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/report_search_bus_bottom" android:lineSpacingMultiplier="1.2" android:fontFamily="@font/mazzard_m_medium" />
+    </LinearLayout>
+</LinearLayout>

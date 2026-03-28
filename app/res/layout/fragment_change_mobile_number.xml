@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="@dimen/dp_200">
+        <TextView android:textSize="@dimen/sp_30" android:textColor="@color/darkBlue" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mobile Number" android:fontFamily="@font/mazzard_h_medium" />
+        <TextView android:textSize="@dimen/sp_16" android:textColor="@color/lightBlue" android:layout_gravity="center" android:id="@id/textView8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_20" android:layout_marginBottom="@dimen/dp_20" android:text="Enter your new mobile number below" android:fontFamily="@font/mazzard_m_regular" />
+        <include android:id="@id/editText" layout="@layout/number_picker" />
+    </LinearLayout>
+</LinearLayout>

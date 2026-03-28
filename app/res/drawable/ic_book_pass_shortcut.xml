@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="40.0dp" android:width="40.0dp" android:viewportWidth="40.0" android:viewportHeight="40.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#0b4156" android:pathData="M20,0L20,0A20,20 0,0 1,40 20L40,20A20,20 0,0 1,20 40L20,40A20,20 0,0 1,0 20L0,20A20,20 0,0 1,20 0z" />
+    <path android:fillColor="#00000000" android:pathData="M22.856,14.017C22.043,13.204 22.043,11.884 22.856,11.071L22.267,10.482C19.91,8.125 18.732,8.125 16.375,10.482L10.482,16.374C8.125,18.731 8.125,19.91 10.482,22.267L10.777,22.562C11.59,21.748 12.91,21.748 13.723,22.562C14.536,23.375 14.536,24.695 13.723,25.508L14.017,25.802C16.375,28.159 17.553,28.159 19.91,25.802L25.803,19.91C28.16,17.553 28.16,16.374 25.803,14.017C24.989,14.83 23.67,14.83 22.856,14.017Z" android:strokeColor="#ffffff" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
+    <path android:fillColor="#00000000" android:pathData="M19.205,21.524L21.68,23.999" android:strokeColor="#ffffff" android:strokeWidth="1.5" android:strokeLineCap="round" />
+    <path android:fillColor="#00000000" android:pathData="M12.252,14.571L14.725,17.044" android:strokeColor="#ffffff" android:strokeWidth="1.5" android:strokeLineCap="round" />
+    <path android:fillColor="#ffffff" android:pathData="M24,18L24,18A6,6 0,0 1,30 24L30,24A6,6 0,0 1,24 30L24,30A6,6 0,0 1,18 24L18,24A6,6 0,0 1,24 18z" />
+    <path android:fillColor="#0b4156" android:pathData="M24.001,19C26.76,19 29,21.24 29,23.999C29,26.757 26.76,28.997 24.001,28.997C21.242,28.997 19.002,26.757 19.002,23.999C19.002,21.24 21.242,19 24.001,19V19ZM23.627,23.625H21.877C21.67,23.625 21.502,23.793 21.502,24C21.502,24.207 21.67,24.375 21.877,24.375H23.627V26.125C23.627,26.332 23.795,26.5 24.002,26.5C24.209,26.5 24.377,26.332 24.377,26.125V24.375H26.127C26.334,24.375 26.502,24.207 26.502,24C26.502,23.793 26.334,23.625 26.127,23.625H24.377V21.875C24.377,21.668 24.209,21.5 24.002,21.5C23.795,21.5 23.627,21.668 23.627,21.875V23.625Z" />
+</vector>

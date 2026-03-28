@@ -1,0 +1,63 @@
+.class public Landroid/support/v4/media/session/PlaybackStateCompat$Api22Impl;
+.super Ljava/lang/Object;
+.source "PlaybackStateCompat.java"
+
+
+# annotations
+.annotation build Landroidx/annotation/RequiresApi;
+.end annotation
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/support/v4/media/session/PlaybackStateCompat;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "Api22Impl"
+.end annotation
+
+
+# direct methods
+.method public static getExtras(Landroid/media/session/PlaybackState;)Landroid/os/Bundle;
+    .locals 0
+    .annotation build Landroidx/annotation/DoNotInline;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "state"
+        }
+    .end annotation
+
+    .line 1523
+    invoke-static {p0}, Landroid/support/v4/media/session/PlaybackStateCompat$Api22Impl$$ExternalSyntheticApiModelOutline0;->m(Landroid/media/session/PlaybackState;)Landroid/os/Bundle;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static setExtras(Landroid/media/session/PlaybackState$Builder;Landroid/os/Bundle;)V
+    .locals 0
+    .annotation build Landroidx/annotation/DoNotInline;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "builder",
+            "extras"
+        }
+    .end annotation
+
+    .line 1518
+    invoke-static {p0, p1}, Landroid/support/v4/media/session/PlaybackStateCompat$Api22Impl$$ExternalSyntheticApiModelOutline1;->m(Landroid/media/session/PlaybackState$Builder;Landroid/os/Bundle;)Landroid/media/session/PlaybackState$Builder;
+
+    return-void
+.end method

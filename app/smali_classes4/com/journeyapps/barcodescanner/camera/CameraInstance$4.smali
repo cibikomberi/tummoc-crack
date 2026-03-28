@@ -1,0 +1,100 @@
+.class public Lcom/journeyapps/barcodescanner/camera/CameraInstance$4;
+.super Ljava/lang/Object;
+.source "CameraInstance.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/journeyapps/barcodescanner/camera/CameraInstance;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic this$0:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
+
+
+# direct methods
+.method public constructor <init>(Lcom/journeyapps/barcodescanner/camera/CameraInstance;)V
+    .locals 0
+
+    .line 238
+    iput-object p1, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance$4;->this$0:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .locals 2
+
+    .line 242
+    :try_start_0
+    invoke-static {}, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->access$000()Ljava/lang/String;
+
+    .line 243
+    iget-object v0, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance$4;->this$0:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
+
+    invoke-static {v0}, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->access$100(Lcom/journeyapps/barcodescanner/camera/CameraInstance;)Lcom/journeyapps/barcodescanner/camera/CameraManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/journeyapps/barcodescanner/camera/CameraManager;->stopPreview()V
+
+    .line 244
+    iget-object v0, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance$4;->this$0:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
+
+    invoke-static {v0}, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->access$100(Lcom/journeyapps/barcodescanner/camera/CameraInstance;)Lcom/journeyapps/barcodescanner/camera/CameraManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/journeyapps/barcodescanner/camera/CameraManager;->close()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 246
+    :catch_0
+    invoke-static {}, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->access$000()Ljava/lang/String;
+
+    .line 249
+    :goto_0
+    iget-object v0, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance$4;->this$0:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->access$602(Lcom/journeyapps/barcodescanner/camera/CameraInstance;Z)Z
+
+    .line 251
+    iget-object v0, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance$4;->this$0:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
+
+    invoke-static {v0}, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->access$300(Lcom/journeyapps/barcodescanner/camera/CameraInstance;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    sget v1, Lcom/google/zxing/client/android/R$id;->zxing_camera_closed:I
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    .line 253
+    iget-object v0, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance$4;->this$0:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
+
+    invoke-static {v0}, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->access$700(Lcom/journeyapps/barcodescanner/camera/CameraInstance;)Lcom/journeyapps/barcodescanner/camera/CameraThread;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/journeyapps/barcodescanner/camera/CameraThread;->decrementInstances()V
+
+    return-void
+.end method

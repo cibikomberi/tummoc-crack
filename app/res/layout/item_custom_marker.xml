@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:tag="layout/item_custom_marker_0" android:background="@drawable/bg_marker_corner" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textColor="@color/darkBlue" android:id="@id/tvRouteName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/dp_8" android:maxWidth="@dimen/dp_110" android:fontFamily="@font/mazzard_h_semibold" />
+    <View android:layout_gravity="center_vertical" android:id="@id/view11" android:background="@drawable/bg_circle" android:layout_width="@dimen/dp_2" android:layout_height="@dimen/dp_2" android:backgroundTint="@color/darkBlue" />
+    <TextView android:textColor="#80000000" android:id="@id/tvRouteDistance" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_margin="@dimen/dp_8" android:layout_weight="1.0" android:fontFamily="@font/mazzard_h_semibold" />
+</LinearLayout>

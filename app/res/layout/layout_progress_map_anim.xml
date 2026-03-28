@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/parent_progress_bar" android:tag="layout/layout_progress_map_anim_0" android:background="@drawable/shape_white_rounded" android:padding="@dimen/dp_4" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:elevation="@dimen/dp_10"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.airbnb.lottie.LottieAnimationView android:layout_gravity="center" android:id="@id/container_progress_bar" android:visibility="visible" android:layout_width="@dimen/dp_120" android:layout_height="@dimen/dp_70" app:lottie_autoPlay="true" app:lottie_loop="true" app:lottie_rawRes="@raw/progress_loader" />
+    <androidx.appcompat.widget.AppCompatTextView android:id="@id/tvNoDataMsg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_2" android:layout_marginBottom="@dimen/dp_4" android:text="@string/fetching_route_info" android:fontFamily="@font/mazzard_m_regular" />
+</LinearLayout>

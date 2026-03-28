@@ -1,0 +1,102 @@
+.class public Lorg/apache/commons/collections4/bidimap/DualHashBidiMap;
+.super Lorg/apache/commons/collections4/bidimap/AbstractDualBidiMap;
+.source "DualHashBidiMap.java"
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lorg/apache/commons/collections4/bidimap/AbstractDualBidiMap<",
+        "TK;TV;>;",
+        "Ljava/io/Serializable;"
+    }
+.end annotation
+
+
+# static fields
+.field private static final serialVersionUID:J = 0x290a0955b1150L
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 2
+
+    .line 53
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    invoke-direct {p0, v0, v1}, Lorg/apache/commons/collections4/bidimap/AbstractDualBidiMap;-><init>(Ljava/util/Map;Ljava/util/Map;)V
+
+    return-void
+.end method
+
+.method private readObject(Ljava/io/ObjectInputStream;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/ClassNotFoundException;
+        }
+    .end annotation
+
+    .line 101
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
+
+    .line 102
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lorg/apache/commons/collections4/bidimap/AbstractDualBidiMap;->normalMap:Ljava/util/Map;
+
+    .line 103
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lorg/apache/commons/collections4/bidimap/AbstractDualBidiMap;->reverseMap:Ljava/util/Map;
+
+    .line 105
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/util/Map;
+
+    .line 106
+    invoke-virtual {p0, p1}, Lorg/apache/commons/collections4/bidimap/AbstractDualBidiMap;->putAll(Ljava/util/Map;)V
+
+    return-void
+.end method
+
+.method private writeObject(Ljava/io/ObjectOutputStream;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 96
+    invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
+
+    .line 97
+    iget-object v0, p0, Lorg/apache/commons/collections4/bidimap/AbstractDualBidiMap;->normalMap:Ljava/util/Map;
+
+    invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
+
+    return-void
+.end method

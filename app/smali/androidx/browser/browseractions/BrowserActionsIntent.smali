@@ -1,0 +1,16 @@
+.class public Landroidx/browser/browseractions/BrowserActionsIntent;
+.super Ljava/lang/Object;
+.source "BrowserActionsIntent.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/browser/browseractions/BrowserActionsIntent$Builder;,
+        Landroidx/browser/browseractions/BrowserActionsIntent$BrowserActionsItemId;,
+        Landroidx/browser/browseractions/BrowserActionsIntent$BrowserActionsUrlType;
+    }
+.end annotation
+
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation

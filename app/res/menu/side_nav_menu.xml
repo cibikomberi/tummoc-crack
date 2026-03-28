@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_side_nav_tickets" android:id="@id/drawer_menu_bmtc_passes_tickets" android:title="@string/bmtc_pass" />
+    <item android:icon="@drawable/ic_side_nav_contact_support" android:id="@id/drawer_menu_bmtc_support" android:title="@string/bmtc_pass_support" />
+    <item android:id="@id/drawer_menu_language" app:actionLayout="@layout/item_change_language" />
+    <item android:icon="@drawable/ic_side_nav_contact_support" android:id="@id/drawer_menu_help_and_support" android:visible="false" android:title="@string/help_and_support" />
+    <item android:icon="@drawable/ic_side_nav_favorites" android:id="@id/drawer_menu_manage_address" android:title="@string/saved_places" />
+    <item android:icon="@drawable/ic_side_nav_switch_city" android:id="@id/drawer_menu_switch_city" android:title="@string/switch_city" />
+    <item android:icon="@drawable/ic_side_nav_notifications" android:id="@id/drawer_menu_notifications" android:visible="false" android:title="@string/notifications" />
+    <item android:icon="@drawable/ic_side_nav_wallet" android:id="@id/drawer_menu_tummoc_money" android:visible="true" android:title="@string/tummoc_money" />
+    <item android:icon="@drawable/ic_side_nav_digest" android:id="@id/drawer_menu_digest" android:title="@string/tummoc_blogs" />
+    <item android:icon="@drawable/ic_side_nav_referral" android:id="@id/drawer_menu_referral" android:title="@string/refer_and_earn" />
+    <item android:icon="@drawable/ic_side_nav_emergency_contacts" android:id="@id/drawer_menu_emergency_contacts" android:visible="false" android:title="@string/str_emergency_contacts" />
+    <item android:icon="@drawable/ic_side_nav_support" android:id="@id/drawer_menu_support" android:visible="false" android:title="@string/str_support" />
+    <item android:icon="@drawable/ic_side_nav_privacy_policy" android:id="@id/drawer_menu_privacy_policy" android:title="@string/str_privacy" />
+    <item android:icon="@drawable/ic_side_nav_terms_of_usage" android:id="@id/drawer_menu_terms_of_usage" android:title="@string/terms" />
+    <item android:icon="@drawable/ic_side_nav_faqs" android:id="@id/drawer_menu_faqs" android:title="@string/faqs" />
+    <item android:icon="@drawable/ic_side_nav_about" android:id="@id/drawer_menu_about" android:visible="false" android:title="@string/about" />
+    <item android:icon="@drawable/ic_side_nav_feedback" android:id="@id/drawer_menu_feedback" android:visible="false" android:title="@string/feedback" />
+    <item android:icon="@drawable/ic_side_nav_logout" android:id="@id/drawer_menu_logout" android:title="@string/str_logout" />
+</menu>

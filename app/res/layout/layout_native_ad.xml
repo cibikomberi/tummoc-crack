@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.gms.ads.nativead.NativeAdView android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:padding="5.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:layout_marginEnd="@dimen/dp_2" style="@style/AppTheme.AdAttribution" />
+            <ImageView android:id="@id/ad_app_icon" android:layout_width="40.0dp" android:layout_height="40.0dp" android:layout_marginRight="10.0dp" />
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/ad_headline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="headline" />
+                <TextView android:id="@id/ad_advertiser" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="advertiser" />
+                <RatingBar android:id="@id/ad_rating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5" android:stepSize="0.5" android:isIndicator="true" style="?android:ratingBarStyleSmall" />
+            </LinearLayout>
+        </LinearLayout>
+        <com.google.android.gms.ads.nativead.MediaView android:id="@id/ad_media" android:layout_width="match_parent" android:layout_height="175.0dp" />
+        <TextView android:id="@id/ad_body" android:padding="5.0dp" android:layout_width="match_parent" android:layout_height="match_parent" android:text="body of ad" />
+        <LinearLayout android:gravity="right" android:padding="5.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@id/ad_price" android:padding="5.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="price" />
+            <TextView android:id="@id/ad_store" android:padding="5.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="store" />
+            <com.google.android.material.button.MaterialButton android:id="@id/ad_call_to_action" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Action" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.gms.ads.nativead.NativeAdView>

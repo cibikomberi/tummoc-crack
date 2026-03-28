@@ -1,0 +1,93 @@
+.class public final Lkotlinx/coroutines/AwaitKt;
+.super Ljava/lang/Object;
+.source "Await.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nAwait.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Await.kt\nkotlinx/coroutines/AwaitKt\n+ 2 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,127:1\n37#2:128\n36#2,3:129\n13536#3,2:132\n1849#4,2:134\n*S KotlinDebug\n*F\n+ 1 Await.kt\nkotlinx/coroutines/AwaitKt\n*L\n42#1:128\n42#1:129,3\n54#1:132,2\n66#1:134,2\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+.end annotation
+
+
+# direct methods
+.method public static final awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 2
+    .param p0    # Ljava/util/Collection;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p1    # Lkotlin/coroutines/Continuation;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Collection<",
+            "+",
+            "Lkotlinx/coroutines/Deferred<",
+            "+TT;>;>;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Ljava/util/List<",
+            "+TT;>;>;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
+
+    .line 42
+    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lkotlin/collections/CollectionsKt__CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Lkotlinx/coroutines/AwaitAll;
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Lkotlinx/coroutines/Deferred;
+
+    .line 38
+    invoke-interface {p0, v1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_1
+
+    check-cast p0, [Lkotlinx/coroutines/Deferred;
+
+    .line 42
+    invoke-direct {v0, p0}, Lkotlinx/coroutines/AwaitAll;-><init>([Lkotlinx/coroutines/Deferred;)V
+
+    invoke-virtual {v0, p1}, Lkotlinx/coroutines/AwaitAll;->await(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 38
+    :cond_1
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method

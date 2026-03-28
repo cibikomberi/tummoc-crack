@@ -1,0 +1,121 @@
+.class public abstract Lcom/mmi/services/api/event/route/MapmyIndiaRouteSummary$Builder;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation build Landroidx/annotation/Keep;
+.end annotation
+
+.annotation build Lcom/google/auto/value/AutoValue$Builder;
+.end annotation
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/mmi/services/api/event/route/MapmyIndiaRouteSummary;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x409
+    name = "Builder"
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract autoBuild()Lcom/mmi/services/api/event/route/MapmyIndiaRouteSummary;
+.end method
+
+.method public abstract baseUrl(Ljava/lang/String;)Lcom/mmi/services/api/event/route/MapmyIndiaRouteSummary$Builder;
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+.end method
+
+.method public build()Lcom/mmi/services/api/event/route/MapmyIndiaRouteSummary;
+    .locals 2
+
+    invoke-static {}, Lcom/mmi/services/account/MapmyIndiaAccountManager;->getInstance()Lcom/mmi/services/account/MapmyIndiaAccountManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/mmi/services/account/MapmyIndiaAccountManager;->getAtlasClientId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/mmi/services/utils/MapmyIndiaUtils;->isAccessTokenValid(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-static {}, Lcom/mmi/services/account/MapmyIndiaAccountManager;->getInstance()Lcom/mmi/services/account/MapmyIndiaAccountManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/mmi/services/account/MapmyIndiaAccountManager;->getAtlasClientSecret()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/mmi/services/utils/MapmyIndiaUtils;->isAccessTokenValid(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lcom/mmi/services/api/ServicesException;
+
+    const-string v1, "Using MapmyIndia Services requires setting a valid client_id and client_secret."
+
+    invoke-direct {v0, v1}, Lcom/mmi/services/api/ServicesException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    :goto_0
+    invoke-virtual {p0}, Lcom/mmi/services/api/event/route/MapmyIndiaRouteSummary$Builder;->autoBuild()Lcom/mmi/services/api/event/route/MapmyIndiaRouteSummary;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public abstract currentNode(Ljava/lang/String;)Lcom/mmi/services/api/event/route/MapmyIndiaRouteSummary$Builder;
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+.end method
+
+.method public abstract isGroup(Ljava/lang/Integer;)Lcom/mmi/services/api/event/route/MapmyIndiaRouteSummary$Builder;
+    .param p1    # Ljava/lang/Integer;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+.end method
+
+.method public abstract routeId(Ljava/lang/String;)Lcom/mmi/services/api/event/route/MapmyIndiaRouteSummary$Builder;
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+.end method
+
+.method public abstract routeIdx(Ljava/lang/Integer;)Lcom/mmi/services/api/event/route/MapmyIndiaRouteSummary$Builder;
+    .param p1    # Ljava/lang/Integer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+.end method

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/activity_intro_0" android:background="@color/darkBlue" android:paddingTop="@dimen/dp_20" android:layout_width="match_parent" android:layout_height="match_parent" android:weightSum="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="0.0dp" android:weightSum="1.0" android:layout_weight="0.9" android:layout_above="@id/btn_next">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="0.3">
+            <FrameLayout android:layout_gravity="start" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:layout_width="@dimen/dp_120" android:layout_height="@dimen/dp_120" android:src="@drawable/intro_screen_gradient_trail" />
+                <ImageView android:layout_width="@dimen/dp_120" android:layout_height="@dimen/dp_120" android:src="@drawable/intro_screen_mascot" android:layout_marginStart="@dimen/dp_100" />
+            </FrameLayout>
+            <TextView android:textSize="@dimen/sp_28" android:textColor="@color/colorWhite" android:id="@id/txtWelcome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_16" android:text="Welcome to" android:includeFontPadding="false" android:fontFamily="@font/mazzard_h_bold" android:layout_marginStart="@dimen/dp_50" />
+            <ImageView android:layout_gravity="start" android:id="@id/iv_logo" android:layout_width="wrap_content" android:layout_height="@dimen/dp_40" android:src="@drawable/logo_tummoc_splash" />
+            <TextView android:textSize="@dimen/sp_28" android:textColor="@color/colorWhite" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_16" android:layout_marginTop="@dimen/dp_16" android:layout_marginRight="@dimen/dp_16" android:text="@string/the_only_commute_app_you_will_ever_need" android:includeFontPadding="false" android:fontFamily="@font/mazzard_h_bold" android:layout_marginHorizontal="@dimen/dp_16" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="0.7">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_12">
+                <ImageView android:layout_gravity="center" android:layout_width="@dimen/intro_pointer_mascot_size" android:layout_height="@dimen/intro_pointer_mascot_size" android:src="@drawable/intro_step_one" android:layout_weight="0.2" />
+                <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.8">
+                    <TextView android:textSize="@dimen/sp_32" android:textColor="@color/colorWhite" android:id="@id/tv_pick_ride" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pick" android:fontFamily="@font/mazzard_h_bold" />
+                    <TextView android:textSize="@dimen/sp_20" android:textColor="@color/colorWhite" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="your ride" android:fontFamily="@font/mazzard_h_medium" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_5">
+                <ImageView android:layout_gravity="center" android:layout_width="@dimen/intro_pointer_mascot_size" android:layout_height="@dimen/intro_pointer_mascot_size" android:src="@drawable/intro_step_two" android:layout_weight="0.2" />
+                <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.8">
+                    <TextView android:textSize="@dimen/sp_32" android:textColor="@color/colorWhite" android:id="@id/tv_choose_route" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Choose" android:fontFamily="@font/mazzard_h_bold" />
+                    <TextView android:textSize="@dimen/sp_20" android:textColor="@color/colorWhite" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="your route" android:fontFamily="@font/mazzard_h_medium" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_5">
+                <ImageView android:layout_gravity="center" android:layout_width="@dimen/intro_pointer_mascot_size" android:layout_height="@dimen/intro_pointer_mascot_size" android:src="@drawable/intro_step_three" android:layout_weight="0.2" />
+                <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.8">
+                    <TextView android:textSize="@dimen/sp_32" android:textColor="@color/colorWhite" android:id="@id/tv_pick_commute" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pick" android:fontFamily="@font/mazzard_h_bold" />
+                    <TextView android:textSize="@dimen/sp_20" android:textColor="@color/colorWhite" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="your commute" android:fontFamily="@font/mazzard_h_medium" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_marginTop="@dimen/dp_20" android:layout_marginBottom="@dimen/dp_24" android:layout_weight="0.1">
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/colorBlack" android:gravity="center" android:id="@id/btn_next" android:background="@drawable/bg_linear_gradient_rounded_corner" android:padding="@dimen/dp_12" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_24" android:layout_marginRight="@dimen/dp_24" android:text="Let's Get Started" android:fontFamily="@font/mazzard_h_medium" android:layout_marginHorizontal="@dimen/dp_24" />
+    </LinearLayout>
+</LinearLayout>

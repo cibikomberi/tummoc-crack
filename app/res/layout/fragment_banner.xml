@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:padding="@dimen/dp_14" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="@dimen/dp_120">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/bannerImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" />
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

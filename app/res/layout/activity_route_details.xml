@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.gms.maps.MapView android:id="@id/map_view" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="@dimen/dp_200" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@id/ivBackNav" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_24" android:src="@drawable/ic_back_nav" android:layout_marginStart="@dimen/dp_20" android:backgroundTint="@color/colorWhite" app:backgroundTint="@color/colorWhite" app:fabCustomSize="@dimen/dp_36" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:maxImageSize="@dimen/dp_14" />
+    <include android:id="@id/bottom_sheet_route_details" layout="@layout/bottom_sheet_route_details" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

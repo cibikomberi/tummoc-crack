@@ -1,0 +1,173 @@
+.class public final Lcom/facebook/bolts/Task$continueWhile$predicateContinuation$1;
+.super Ljava/lang/Object;
+.source "Task.kt"
+
+# interfaces
+.implements Lcom/facebook/bolts/Continuation;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/facebook/bolts/Continuation<",
+        "Ljava/lang/Void;",
+        "Lcom/facebook/bolts/Task<",
+        "Ljava/lang/Void;",
+        ">;>;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+.end annotation
+
+
+# instance fields
+.field public final synthetic $continuation:Lcom/facebook/bolts/Continuation;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/facebook/bolts/Continuation<",
+            "Ljava/lang/Void;",
+            "Lcom/facebook/bolts/Task<",
+            "Ljava/lang/Void;",
+            ">;>;"
+        }
+    .end annotation
+.end field
+
+.field public final synthetic $ct:Lcom/facebook/bolts/CancellationToken;
+
+.field public final synthetic $executor:Ljava/util/concurrent/Executor;
+
+.field public final synthetic $predicate:Ljava/util/concurrent/Callable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/Callable<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# virtual methods
+.method public then(Lcom/facebook/bolts/Task;)Lcom/facebook/bolts/Task;
+    .locals 2
+    .param p1    # Lcom/facebook/bolts/Task;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/facebook/bolts/Task<",
+            "Ljava/lang/Void;",
+            ">;)",
+            "Lcom/facebook/bolts/Task<",
+            "Ljava/lang/Void;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    const-string/jumbo v0, "task"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 214
+    iget-object p1, p0, Lcom/facebook/bolts/Task$continueWhile$predicateContinuation$1;->$ct:Lcom/facebook/bolts/CancellationToken;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Lcom/facebook/bolts/CancellationToken;->isCancellationRequested()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    .line 215
+    sget-object p1, Lcom/facebook/bolts/Task;->Companion:Lcom/facebook/bolts/Task$Companion;
+
+    invoke-virtual {p1}, Lcom/facebook/bolts/Task$Companion;->cancelled()Lcom/facebook/bolts/Task;
+
+    move-result-object p1
+
+    return-object p1
+
+    .line 217
+    :cond_0
+    iget-object p1, p0, Lcom/facebook/bolts/Task$continueWhile$predicateContinuation$1;->$predicate:Ljava/util/concurrent/Callable;
+
+    invoke-interface {p1}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
+
+    move-result-object p1
+
+    const-string v0, "predicate.call()"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_1
+
+    .line 218
+    sget-object p1, Lcom/facebook/bolts/Task;->Companion:Lcom/facebook/bolts/Task$Companion;
+
+    invoke-virtual {p1, v0}, Lcom/facebook/bolts/Task$Companion;->forResult(Ljava/lang/Object;)Lcom/facebook/bolts/Task;
+
+    move-result-object p1
+
+    .line 219
+    iget-object v0, p0, Lcom/facebook/bolts/Task$continueWhile$predicateContinuation$1;->$continuation:Lcom/facebook/bolts/Continuation;
+
+    iget-object v1, p0, Lcom/facebook/bolts/Task$continueWhile$predicateContinuation$1;->$executor:Ljava/util/concurrent/Executor;
+
+    invoke-virtual {p1, v0, v1}, Lcom/facebook/bolts/Task;->onSuccessTask(Lcom/facebook/bolts/Continuation;Ljava/util/concurrent/Executor;)Lcom/facebook/bolts/Task;
+
+    move-result-object p1
+
+    .line 220
+    iget-object v0, p0, Lcom/facebook/bolts/Task$continueWhile$predicateContinuation$1;->$executor:Ljava/util/concurrent/Executor;
+
+    invoke-virtual {p1, p0, v0}, Lcom/facebook/bolts/Task;->onSuccessTask(Lcom/facebook/bolts/Continuation;Ljava/util/concurrent/Executor;)Lcom/facebook/bolts/Task;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    .line 221
+    :cond_1
+    sget-object p1, Lcom/facebook/bolts/Task;->Companion:Lcom/facebook/bolts/Task$Companion;
+
+    invoke-virtual {p1, v0}, Lcom/facebook/bolts/Task$Companion;->forResult(Ljava/lang/Object;)Lcom/facebook/bolts/Task;
+
+    move-result-object p1
+
+    :goto_0
+    return-object p1
+.end method
+
+.method public bridge synthetic then(Lcom/facebook/bolts/Task;)Ljava/lang/Object;
+    .locals 0
+
+    .line 211
+    invoke-virtual {p0, p1}, Lcom/facebook/bolts/Task$continueWhile$predicateContinuation$1;->then(Lcom/facebook/bolts/Task;)Lcom/facebook/bolts/Task;
+
+    move-result-object p1
+
+    return-object p1
+.end method

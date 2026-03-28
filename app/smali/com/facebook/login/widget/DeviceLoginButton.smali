@@ -1,0 +1,56 @@
+.class public Lcom/facebook/login/widget/DeviceLoginButton;
+.super Lcom/facebook/login/widget/LoginButton;
+.source "DeviceLoginButton.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/facebook/login/widget/DeviceLoginButton$DeviceLoginClickListener;
+    }
+.end annotation
+
+
+# instance fields
+.field public deviceRedirectUri:Landroid/net/Uri;
+
+
+# virtual methods
+.method public getDeviceRedirectUri()Landroid/net/Uri;
+    .locals 1
+
+    .line 89
+    iget-object v0, p0, Lcom/facebook/login/widget/DeviceLoginButton;->deviceRedirectUri:Landroid/net/Uri;
+
+    return-object v0
+.end method
+
+.method public getNewLoginClickListener()Lcom/facebook/login/widget/LoginButton$LoginClickListener;
+    .locals 2
+
+    .line 94
+    new-instance v0, Lcom/facebook/login/widget/DeviceLoginButton$DeviceLoginClickListener;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/facebook/login/widget/DeviceLoginButton$DeviceLoginClickListener;-><init>(Lcom/facebook/login/widget/DeviceLoginButton;Lcom/facebook/login/widget/DeviceLoginButton$1;)V
+
+    return-object v0
+.end method
+
+.method public setDeviceRedirectUri(Landroid/net/Uri;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "uri"
+        }
+    .end annotation
+
+    .line 77
+    iput-object p1, p0, Lcom/facebook/login/widget/DeviceLoginButton;->deviceRedirectUri:Landroid/net/Uri;
+
+    return-void
+.end method

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout android:id="@id/drawerLayout" android:tag="layout/activity_home_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout android:orientation="horizontal" android:id="@id/toolbarLayout" android:tag="binding_1" android:background="@color/darkBlue" android:paddingLeft="@dimen/dp_16" android:paddingRight="@dimen/dp_16" android:layout_width="match_parent" android:layout_height="?actionBarSize" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/ivToggleDrawer" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_hamburger_menu" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/ivDotWalk" android:layout_width="@dimen/dp_15" android:layout_height="@dimen/dp_15" android:layout_marginBottom="@dimen/dp_12" android:layout_marginStart="@dimen/_dp_10" app:layout_constraintBottom_toBottomOf="@id/ivToggleDrawer" app:layout_constraintEnd_toEndOf="@id/ivToggleDrawer" app:srcCompat="@drawable/ic_live_dot" />
+            <include android:id="@id/layoutLocationSelection" layout="@layout/layout_location_spinner_view" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <fragment android:name="androidx.navigation.fragment.NavHostFragment" android:id="@id/nav_fragment" android:layout_width="match_parent" android:layout_height="0.0dp" app:defaultNavHost="true" app:layout_constraintBottom_toTopOf="@id/bottomNavigationView" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbarLayout" app:navGraph="@navigation/nav_graph_bottom_nav" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView android:id="@id/bottomNavigationView" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="@dimen/bottom_nav_height" android:elevation="0.0dp" android:outlineProvider="none" app:elevation="0.0dp" app:itemIconTint="@drawable/bottom_navigation_selector" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:menu="@menu/bottom_navigation_items" />
+        <FrameLayout android:id="@id/video_holder" android:layout_width="match_parent" android:layout_height="match_parent" android:elevation="@dimen/dp_3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.navigation.NavigationView android:layout_gravity="start" android:layout_width="wrap_content" android:layout_height="match_parent">
+        <androidx.core.widget.NestedScrollView android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:fillViewport="true">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent">
+                <com.google.android.material.navigation.NavigationView android:layout_gravity="start" android:id="@id/drawerNavigationView" android:fitsSystemWindows="true" android:layout_width="wrap_content" android:layout_height="wrap_content" app:headerLayout="@layout/side_nav_header" app:itemTextAppearance="@style/SideNavTextView" app:menu="@menu/side_nav_menu" />
+                <com.google.android.material.navigation.NavigationView android:layout_width="wrap_content" android:layout_height="match_parent">
+                    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:padding="@dimen/dp_16" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/sp_12" android:textColor="@color/colorGrey61" android:gravity="center" android:id="@id/tvAppVersion" android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/mazzard_m_regular" />
+                        <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10">
+                            <ImageView android:id="@id/ivFacebook" android:background="@color/colorWhite" android:padding="@dimen/dp_2" android:layout_width="@dimen/dp_30" android:layout_height="@dimen/dp_30" android:src="@drawable/ic_facebook" android:layout_marginEnd="@dimen/dp_8" />
+                            <ImageView android:id="@id/ivTwitter" android:background="@color/colorWhite" android:padding="@dimen/dp_2" android:layout_width="@dimen/dp_30" android:layout_height="@dimen/dp_30" android:src="@drawable/ic_twitter" android:layout_marginEnd="@dimen/dp_8" />
+                            <ImageView android:id="@id/ivLinkedIn" android:background="@color/colorWhite" android:padding="@dimen/dp_2" android:layout_width="@dimen/dp_30" android:layout_height="@dimen/dp_30" android:src="@drawable/ic_linkedin" android:layout_marginEnd="@dimen/dp_8" />
+                            <ImageView android:id="@id/ivInstagram" android:background="@color/colorWhite" android:padding="@dimen/dp_2" android:layout_width="@dimen/dp_30" android:layout_height="@dimen/dp_30" android:src="@drawable/ic_insta" android:layout_marginEnd="@dimen/dp_8" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.navigation.NavigationView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

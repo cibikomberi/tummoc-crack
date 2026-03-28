@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/layoutContainer" android:background="@color/colorWhite" android:paddingLeft="@dimen/dp_16" android:paddingTop="@dimen/dp_10" android:paddingRight="@dimen/dp_16" android:paddingBottom="@dimen/dp_10" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/ivRadio" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_bullet_blue" />
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/sp_14" android:textColor="@color/darkBlue" android:id="@id/tvIDCardType" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/mazzard_m_medium" android:layout_marginStart="@dimen/dp_16" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@id/ivRadio" app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

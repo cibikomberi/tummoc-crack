@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:tag="layout/item_metro_bus_color_0" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_metro" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_6">
+        <LinearLayout android:background="@drawable/rectangle_white" android:padding="@dimen/dp_5" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.6">
+            <ImageView android:id="@id/img_med" android:layout_width="@dimen/dp_15" android:layout_height="@dimen/dp_15" android:src="@drawable/metro_small" android:layout_marginEnd="@dimen/dp_3" />
+            <TextView android:textSize="9.0sp" android:textColor="@color/colorBlack" android:layout_gravity="center_vertical" android:id="@id/tv_metro" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Metro Line" android:fontFamily="@font/mazzard_h_medium" />
+        </LinearLayout>
+        <View android:layout_gravity="center" android:id="@id/metro_view" android:background="@color/colorGreen" android:layout_width="0.0dp" android:layout_height="@dimen/dp_12" android:layout_weight="0.4" android:layout_marginStart="@dimen/dp_10" android:layout_marginEnd="@dimen/dp_10" />
+    </LinearLayout>
+</LinearLayout>

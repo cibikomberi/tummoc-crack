@@ -1,0 +1,55 @@
+.class public interface abstract Lkotlinx/coroutines/sync/Mutex;
+.super Ljava/lang/Object;
+.source "Mutex.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlinx/coroutines/sync/Mutex$DefaultImpls;
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+.end annotation
+
+
+# virtual methods
+.method public abstract lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+    .param p2    # Lkotlin/coroutines/Continuation;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
+.end method
+
+.method public abstract tryLock(Ljava/lang/Object;)Z
+    .param p1    # Ljava/lang/Object;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+.end method
+
+.method public abstract unlock(Ljava/lang/Object;)V
+    .param p1    # Ljava/lang/Object;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+.end method

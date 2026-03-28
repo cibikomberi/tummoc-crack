@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/imageView2" android:layout_width="@dimen/dp_18" android:layout_height="@dimen/dp_18" android:layout_marginTop="@dimen/dp_10" android:src="@drawable/ic_launcher" android:layout_marginStart="@dimen/dp_10" />
+        <TextView android:textColor="@color/colorBlack" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10" android:text="@string/app_name" android:fontFamily="@font/mazzard_m_medium" android:layout_marginStart="@dimen/dp_10" />
+    </LinearLayout>
+    <TextView android:textColor="@color/colorBlack" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/dp_10" android:layout_marginTop="@dimen/dp_14" android:text="@string/syncing_data" android:fontFamily="@font/mazzard_h_semibold" />
+    <ProgressBar android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp_10" android:indeterminate="true" android:layout_marginStart="@dimen/dp_10" android:layout_marginEnd="@dimen/dp_10" android:backgroundTint="@color/darkBlue" style="?android:progressBarStyleHorizontal" />
+</LinearLayout>

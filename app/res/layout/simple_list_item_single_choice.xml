@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView android:textAppearance="@style/SideNavTextView" android:gravity="center_vertical" android:id="@android:id/text1" android:layout_width="match_parent" android:layout_height="?android:listPreferredItemHeightSmall" android:checkMark="@drawable/list_transit_selector" android:paddingStart="?android:listPreferredItemPaddingStart" android:paddingEnd="?android:listPreferredItemPaddingEnd"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

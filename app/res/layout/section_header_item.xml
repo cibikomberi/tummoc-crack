@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/lightBlueNavHeader" android:paddingTop="@dimen/dp_6" android:paddingBottom="@dimen/dp_6" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_20"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/sp_14" android:textColor="@color/darkBlue" android:id="@id/tvMonthYear" android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/mazzard_m_medium" android:layout_marginStart="@dimen/dp_24" />
+</LinearLayout>

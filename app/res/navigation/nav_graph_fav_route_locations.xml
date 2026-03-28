@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/nav_fav_fragment.xml" app:startDestination="@id/HomeFavFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <action android:id="@id/action_HomeFavFragment_to_SaveRouteInputFragment" app:destination="@id/SaveRouteInputFragment" app:enterAnim="@anim/slide_in_left" app:exitAnim="@anim/slide_out_right" app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right" />
+    <action android:id="@id/action_HomeFavFragment_to_SaveLocationInputFragment" app:destination="@id/SaveLocationInputFragment" app:enterAnim="@anim/slide_in_left" app:exitAnim="@anim/slide_out_right" app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right" />
+    <fragment android:label="@string/my_favourites" android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.HomeFavFragment" android:id="@id/HomeFavFragment" />
+    <fragment android:label="@string/saved_route" android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.SaveRouteInputFragment" android:id="@id/SaveRouteInputFragment" />
+    <fragment android:label="@string/saved_locations" android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.SaveLocationInputFragment" android:id="@id/SaveLocationInputFragment" />
+</navigation>

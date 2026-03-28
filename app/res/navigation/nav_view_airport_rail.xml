@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation app:startDestination="@id/searchAirportRailFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="SearchAirportRailFragment" android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.SearchAirportRailFragment" android:id="@id/searchAirportRailFragment">
+        <action android:id="@id/action_searchAirportRailFragment_to_viewByAirportLocalFragment" app:destination="@id/viewByAirportLocalFragment" app:popUpTo="@id/searchAirportRailFragment" />
+    </fragment>
+    <fragment android:label="ViewByAirportLocalFragment" android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.ViewByAirportLocalFragment" android:id="@id/viewByAirportLocalFragment" />
+</navigation>

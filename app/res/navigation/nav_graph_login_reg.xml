@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation app:startDestination="@id/LoginFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <action android:id="@id/action_LoginFragment_to_OtpScreenFragment" app:destination="@id/OtpScreenFragment" app:enterAnim="@anim/slide_in_left" app:exitAnim="@anim/slide_out_right" app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right" app:popUpTo="@id/LoginFragment" app:popUpToInclusive="false" />
+    <action android:id="@id/action_OtpScreenFragment_to_LoginFragment" app:destination="@id/LoginFragment" app:enterAnim="@anim/slide_in_left" app:exitAnim="@anim/slide_out_right" app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right" />
+    <fragment android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.LoginFragment" android:id="@id/LoginFragment" />
+    <fragment android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.OtpScreenFragment" android:id="@id/OtpScreenFragment" />
+</navigation>

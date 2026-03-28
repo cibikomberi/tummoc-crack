@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout android:id="@id/shimmer_view_container" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent" app:shimmer_auto_start="false" app:shimmer_highlight_alpha="0.8"
+  xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout android:padding="@dimen/dp_16" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <View android:id="@id/view12" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/Shimmer_Box" />
+        <View app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/view12" app:layout_constraintTop_toTopOf="@id/view12" style="@style/Shimmer_Box_Rectangle" />
+        <View android:id="@id/view13" android:layout_marginTop="@dimen/dp_24" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/view12" style="@style/Shimmer_Box" />
+        <View android:id="@id/view14" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/view13" app:layout_constraintTop_toTopOf="@id/view13" style="@style/Shimmer_Box_Rectangle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.facebook.shimmer.ShimmerFrameLayout>

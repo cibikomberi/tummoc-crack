@@ -1,0 +1,32 @@
+.class public final Lcom/google/android/exoplayer2/drm/LocalMediaDrmCallback;
+.super Ljava/lang/Object;
+.source "LocalMediaDrmCallback.java"
+
+# interfaces
+.implements Lcom/google/android/exoplayer2/drm/MediaDrmCallback;
+
+
+# instance fields
+.field public final keyResponse:[B
+
+
+# virtual methods
+.method public executeKeyRequest(Ljava/util/UUID;Lcom/google/android/exoplayer2/drm/ExoMediaDrm$KeyRequest;)[B
+    .locals 0
+
+    .line 45
+    iget-object p1, p0, Lcom/google/android/exoplayer2/drm/LocalMediaDrmCallback;->keyResponse:[B
+
+    return-object p1
+.end method
+
+.method public executeProvisionRequest(Ljava/util/UUID;Lcom/google/android/exoplayer2/drm/ExoMediaDrm$ProvisionRequest;)[B
+    .locals 0
+
+    .line 40
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method

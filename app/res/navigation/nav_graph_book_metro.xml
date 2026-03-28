@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/nav_book_metro" app:startDestination="@id/SearchByLineFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="@string/search_by_line" android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.SearchByLineFragment" android:id="@id/SearchByLineFragment">
+        <action android:id="@id/action_SearchByLineFragment_to_SelectSourceStopFragment" app:destination="@id/SelectSourceStopFragment" app:enterAnim="@anim/slide_in_left" app:exitAnim="@anim/slide_out_right" app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.SelectSourceStopMetroFragment" android:id="@id/SelectSourceStopFragment">
+        <action android:id="@id/action_SelectSourceStopFragment_to_SearchByLineFragment" app:destination="@id/SearchByLineFragment" app:enterAnim="@anim/slide_in_left" app:exitAnim="@anim/slide_out_right" app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+</navigation>

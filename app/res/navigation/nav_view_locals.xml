@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation app:startDestination="@id/nav_view_locals_fragment_1"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="@string/search_by_line" android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.ViewByLineFragment" android:id="@id/nav_view_locals_fragment_1">
+        <action android:id="@id/action_viewByLineFragment_to_viewByLineItemFragment" app:destination="@id/nav_view_locals_fragment_2" app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.ViewByLineItemFragment" android:id="@id/nav_view_locals_fragment_2">
+        <action android:id="@id/action_viewByLineFragment_to_viewScheduleFragment" app:destination="@id/nav_view_locals_fragment_3" app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.ViewScheduleItemFragment" android:id="@id/nav_view_locals_fragment_3" />
+</navigation>

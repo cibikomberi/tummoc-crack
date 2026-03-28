@@ -1,0 +1,34 @@
+.class public final synthetic Lorg/transhelp/bykerr/uiRevamp/ui/activities/BaseActivity$$ExternalSyntheticLambda4;
+.super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
+
+# interfaces
+.implements Lcom/google/android/play/core/tasks/OnCompleteListener;
+
+
+# instance fields
+.field public final synthetic f$0:Lorg/transhelp/bykerr/uiRevamp/ui/activities/BaseActivity;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lorg/transhelp/bykerr/uiRevamp/ui/activities/BaseActivity;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/transhelp/bykerr/uiRevamp/ui/activities/BaseActivity$$ExternalSyntheticLambda4;->f$0:Lorg/transhelp/bykerr/uiRevamp/ui/activities/BaseActivity;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onComplete(Lcom/google/android/play/core/tasks/Task;)V
+    .locals 1
+
+    iget-object v0, p0, Lorg/transhelp/bykerr/uiRevamp/ui/activities/BaseActivity$$ExternalSyntheticLambda4;->f$0:Lorg/transhelp/bykerr/uiRevamp/ui/activities/BaseActivity;
+
+    invoke-static {v0, p1}, Lorg/transhelp/bykerr/uiRevamp/ui/activities/BaseActivity;->$r8$lambda$UR2rh-AhEcbwTEIHU_9N_aRgYJg(Lorg/transhelp/bykerr/uiRevamp/ui/activities/BaseActivity;Lcom/google/android/play/core/tasks/Task;)V
+
+    return-void
+.end method

@@ -1,0 +1,434 @@
+.class public Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl$15;
+.super Ljava/lang/Object;
+.source "SearchBusMetroDao_Impl.java"
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl;->getAllNearByLocalLocation()Lio/reactivex/Flowable;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/concurrent/Callable<",
+        "Ljava/util/List<",
+        "Lorg/transhelp/bykerr/uiRevamp/models/NearByBusStationModel;",
+        ">;>;"
+    }
+.end annotation
+
+
+# instance fields
+.field public final synthetic this$0:Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl;
+
+.field public final synthetic val$_statement:Landroidx/room/RoomSQLiteQuery;
+
+
+# direct methods
+.method public constructor <init>(Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl;Landroidx/room/RoomSQLiteQuery;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010,
+            0x1010
+        }
+        names = {
+            "this$0",
+            "val$_statement"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
+
+    .line 1007
+    iput-object p1, p0, Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl$15;->this$0:Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl;
+
+    iput-object p2, p0, Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl$15;->val$_statement:Landroidx/room/RoomSQLiteQuery;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public bridge synthetic call()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .line 1007
+    invoke-virtual {p0}, Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl$15;->call()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public call()Ljava/util/List;
+    .locals 18
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lorg/transhelp/bykerr/uiRevamp/models/NearByBusStationModel;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    move-object/from16 v1, p0
+
+    .line 1010
+    iget-object v0, v1, Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl$15;->this$0:Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl;
+
+    invoke-static {v0}, Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl;->access$000(Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl;)Landroidx/room/RoomDatabase;
+
+    move-result-object v0
+
+    iget-object v2, v1, Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl$15;->val$_statement:Landroidx/room/RoomSQLiteQuery;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    invoke-static {v0, v2, v3, v4}, Landroidx/room/util/DBUtil;->query(Landroidx/room/RoomDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;ZLandroid/os/CancellationSignal;)Landroid/database/Cursor;
+
+    move-result-object v2
+
+    .line 1023
+    :try_start_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-interface {v2}, Landroid/database/Cursor;->getCount()I
+
+    move-result v5
+
+    invoke-direct {v0, v5}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 1024
+    :goto_0
+    invoke-interface {v2}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_b
+
+    .line 1027
+    invoke-interface {v2, v3}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v7
+
+    const/4 v5, 0x1
+
+    .line 1029
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    move-object v8, v4
+
+    goto :goto_1
+
+    .line 1032
+    :cond_0
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    move-object v8, v5
+
+    :goto_1
+    const/4 v5, 0x2
+
+    .line 1035
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->getDouble(I)D
+
+    move-result-wide v9
+
+    const/4 v5, 0x3
+
+    .line 1037
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->getDouble(I)D
+
+    move-result-wide v11
+
+    const/4 v5, 0x4
+
+    .line 1039
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->getDouble(I)D
+
+    move-result-wide v13
+
+    const/4 v5, 0x5
+
+    .line 1041
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    move-object v15, v4
+
+    goto :goto_2
+
+    .line 1044
+    :cond_1
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    move-object v15, v5
+
+    :goto_2
+    const/4 v5, 0x6
+
+    .line 1047
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2
+
+    move-object/from16 v17, v4
+
+    goto :goto_3
+
+    .line 1050
+    :cond_2
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    move-object/from16 v17, v5
+
+    :goto_3
+    const/4 v5, 0x7
+
+    .line 1053
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v6
+
+    const/16 v3, 0x8
+
+    const/16 v4, 0xa
+
+    const/16 v5, 0x9
+
+    if-eqz v6, :cond_4
+
+    invoke-interface {v2, v3}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    invoke-interface {v2, v4}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v6
+
+    if-nez v6, :cond_3
+
+    goto :goto_4
+
+    :cond_3
+    const/16 v16, 0x0
+
+    goto :goto_b
+
+    :cond_4
+    :goto_4
+    const/4 v6, 0x7
+
+    .line 1055
+    invoke-interface {v2, v6}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v16
+
+    if-eqz v16, :cond_5
+
+    const/4 v6, 0x0
+
+    goto :goto_5
+
+    .line 1058
+    :cond_5
+    invoke-interface {v2, v6}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v6
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    .line 1061
+    :goto_5
+    invoke-interface {v2, v3}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v16
+
+    if-eqz v16, :cond_6
+
+    const/4 v3, 0x0
+
+    goto :goto_6
+
+    .line 1064
+    :cond_6
+    invoke-interface {v2, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 1067
+    :goto_6
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v16
+
+    if-eqz v16, :cond_8
+
+    invoke-interface {v2, v4}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v16
+
+    if-nez v16, :cond_7
+
+    goto :goto_7
+
+    :cond_7
+    const/4 v1, 0x0
+
+    goto :goto_a
+
+    .line 1069
+    :cond_8
+    :goto_7
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v16
+
+    if-eqz v16, :cond_9
+
+    const/4 v5, 0x0
+
+    goto :goto_8
+
+    .line 1072
+    :cond_9
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v5
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    .line 1075
+    :goto_8
+    invoke-interface {v2, v4}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v16
+
+    if-eqz v16, :cond_a
+
+    const/4 v4, 0x0
+
+    goto :goto_9
+
+    .line 1078
+    :cond_a
+    invoke-interface {v2, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 1080
+    :goto_9
+    new-instance v1, Lorg/transhelp/bykerr/uiRevamp/models/CityId;
+
+    invoke-direct {v1, v5, v4}, Lorg/transhelp/bykerr/uiRevamp/models/CityId;-><init>(Ljava/lang/Integer;Ljava/lang/String;)V
+
+    .line 1084
+    :goto_a
+    new-instance v4, Lorg/transhelp/bykerr/uiRevamp/models/MetroRoute;
+
+    invoke-direct {v4, v1, v6, v3}, Lorg/transhelp/bykerr/uiRevamp/models/MetroRoute;-><init>(Lorg/transhelp/bykerr/uiRevamp/models/CityId;Ljava/lang/Integer;Ljava/lang/String;)V
+
+    move-object/from16 v16, v4
+
+    .line 1088
+    :goto_b
+    new-instance v1, Lorg/transhelp/bykerr/uiRevamp/models/NearByBusStationModel;
+
+    move-object v6, v1
+
+    invoke-direct/range {v6 .. v17}, Lorg/transhelp/bykerr/uiRevamp/models/NearByBusStationModel;-><init>(ILjava/lang/String;DDDLjava/lang/String;Lorg/transhelp/bykerr/uiRevamp/models/MetroRoute;Ljava/lang/String;)V
+
+    .line 1089
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-object/from16 v1, p0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    goto/16 :goto_0
+
+    .line 1093
+    :cond_b
+    invoke-interface {v2}, Landroid/database/Cursor;->close()V
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    invoke-interface {v2}, Landroid/database/Cursor;->close()V
+
+    .line 1094
+    throw v0
+.end method
+
+.method public finalize()V
+    .locals 1
+
+    .line 1099
+    iget-object v0, p0, Lorg/transhelp/bykerr/uiRevamp/room/SearchBusMetroDao_Impl$15;->val$_statement:Landroidx/room/RoomSQLiteQuery;
+
+    invoke-virtual {v0}, Landroidx/room/RoomSQLiteQuery;->release()V
+
+    return-void
+.end method

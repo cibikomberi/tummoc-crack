@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/layoutInputs" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" layout="@layout/layout_source_destination_inputs" />
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/layoutDepartLater" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/layoutInputs">
+        <include android:id="@id/includeDepartLater" layout="@layout/layout_depart_now_later" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.gms.maps.MapView android:id="@id/map_view" android:layout_width="match_parent" android:layout_height="0.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/layoutDepartLater" />
+    <include android:id="@id/layoutActionBtn" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_16" android:layout_marginRight="@dimen/dp_16" android:layout_marginBottom="@dimen/dp_25" android:layout_marginHorizontal="@dimen/dp_16" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" layout="@layout/btn_action_width_match_parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/sp_12" android:textColor="@color/darkBlue" android:id="@id/tv_service_name" android:background="@drawable/border_linear_dark_blue" android:padding="@dimen/dp_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_12" android:text="@string/bus_stops" android:fontFamily="@font/mazzard_h_medium" android:layout_marginStart="@dimen/dp_10" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

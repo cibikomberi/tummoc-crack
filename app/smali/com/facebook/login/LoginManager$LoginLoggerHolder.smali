@@ -1,0 +1,127 @@
+.class public final Lcom/facebook/login/LoginManager$LoginLoggerHolder;
+.super Ljava/lang/Object;
+.source "LoginManager.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/facebook/login/LoginManager;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "LoginLoggerHolder"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+.end annotation
+
+
+# static fields
+.field public static final INSTANCE:Lcom/facebook/login/LoginManager$LoginLoggerHolder;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field public static logger:Lcom/facebook/login/LoginLogger;
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
+.end field
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/facebook/login/LoginManager$LoginLoggerHolder;
+
+    invoke-direct {v0}, Lcom/facebook/login/LoginManager$LoginLoggerHolder;-><init>()V
+
+    sput-object v0, Lcom/facebook/login/LoginManager$LoginLoggerHolder;->INSTANCE:Lcom/facebook/login/LoginManager$LoginLoggerHolder;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1284
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final declared-synchronized getLogger(Landroid/content/Context;)Lcom/facebook/login/LoginLogger;
+    .locals 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
+
+    monitor-enter p0
+
+    if-nez p1, :cond_0
+
+    .line 1290
+    :try_start_0
+    invoke-static {}, Lcom/facebook/FacebookSdk;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    if-nez p1, :cond_1
+
+    const/4 p1, 0x0
+
+    .line 1292
+    monitor-exit p0
+
+    return-object p1
+
+    .line 1294
+    :cond_1
+    :try_start_1
+    sget-object v0, Lcom/facebook/login/LoginManager$LoginLoggerHolder;->logger:Lcom/facebook/login/LoginLogger;
+
+    if-nez v0, :cond_2
+
+    .line 1295
+    new-instance v0, Lcom/facebook/login/LoginLogger;
+
+    invoke-static {}, Lcom/facebook/FacebookSdk;->getApplicationId()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, p1, v1}, Lcom/facebook/login/LoginLogger;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    sput-object v0, Lcom/facebook/login/LoginManager$LoginLoggerHolder;->logger:Lcom/facebook/login/LoginLogger;
+
+    .line 1297
+    :cond_2
+    sget-object p1, Lcom/facebook/login/LoginManager$LoginLoggerHolder;->logger:Lcom/facebook/login/LoginLogger;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
+
+    :goto_1
+    monitor-exit p0
+
+    throw p1
+.end method

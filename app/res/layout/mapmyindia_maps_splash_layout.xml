@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/splash_view" android:background="#e4ecd2" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:textColor="#ffffff" android:id="@id/loading_map_text_view" android:background="#000000" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mapmyindia_maps_loading_map" android:layout_centerInParent="true" android:textAllCaps="false" />
+    <LinearLayout android:orientation="vertical" android:id="@id/map_loading_issue_layout" android:background="#ffffff" android:padding="10.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="5.0dp" android:layout_centerInParent="true">
+        <TextView android:textColor="@color/mapmyindia_maps_dim_gray" android:gravity="center" android:id="@id/error_text_view" android:padding="15.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/mapmyindia_maps_something_went_wrong_map_loading" />
+        <Button android:textSize="14.0sp" android:textColor="#000000" android:gravity="center" android:layout_gravity="center" android:id="@id/map_retry_button" android:background="@color/mapmyindia_maps_dim_gray" android:layout_width="wrap_content" android:layout_height="40.0dp" android:layout_marginTop="10.0dp" android:text="@string/mapmyindia_maps_retry" />
+    </LinearLayout>
+</RelativeLayout>

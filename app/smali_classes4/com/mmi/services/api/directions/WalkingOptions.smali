@@ -1,0 +1,144 @@
+.class public abstract Lcom/mmi/services/api/directions/WalkingOptions;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation build Landroidx/annotation/Keep;
+.end annotation
+
+.annotation build Lcom/google/auto/value/AutoValue;
+.end annotation
+
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/mmi/services/api/directions/WalkingOptions$Builder;
+    }
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static builder()Lcom/mmi/services/api/directions/WalkingOptions$Builder;
+    .locals 1
+
+    new-instance v0, Lcom/mmi/services/api/directions/a$a;
+
+    invoke-direct {v0}, Lcom/mmi/services/api/directions/a$a;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static fromJson(Ljava/lang/String;)Lcom/mmi/services/api/directions/WalkingOptions;
+    .locals 2
+
+    new-instance v0, Lcom/google/gson/GsonBuilder;
+
+    invoke-direct {v0}, Lcom/google/gson/GsonBuilder;-><init>()V
+
+    invoke-static {}, Lcom/mmi/services/api/directions/WalkingOptionsAdapterFactory;->create()Lcom/google/gson/TypeAdapterFactory;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/gson/GsonBuilder;->registerTypeAdapterFactory(Lcom/google/gson/TypeAdapterFactory;)Lcom/google/gson/GsonBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/GsonBuilder;->create()Lcom/google/gson/Gson;
+
+    move-result-object v0
+
+    const-class v1, Lcom/mmi/services/api/directions/WalkingOptions;
+
+    invoke-virtual {v0, p0, v1}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lcom/mmi/services/api/directions/WalkingOptions;
+
+    return-object p0
+.end method
+
+.method public static typeAdapter(Lcom/google/gson/Gson;)Lcom/google/gson/TypeAdapter;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/gson/Gson;",
+            ")",
+            "Lcom/google/gson/TypeAdapter<",
+            "Lcom/mmi/services/api/directions/WalkingOptions;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lcom/mmi/services/api/directions/e$a;
+
+    invoke-direct {v0, p0}, Lcom/mmi/services/api/directions/e$a;-><init>(Lcom/google/gson/Gson;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public abstract alleyBias()Ljava/lang/Double;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "alley_bias"
+    .end annotation
+.end method
+
+.method public final toJson()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Lcom/google/gson/GsonBuilder;
+
+    invoke-direct {v0}, Lcom/google/gson/GsonBuilder;-><init>()V
+
+    invoke-static {}, Lcom/mmi/services/api/directions/WalkingOptionsAdapterFactory;->create()Lcom/google/gson/TypeAdapterFactory;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/gson/GsonBuilder;->registerTypeAdapterFactory(Lcom/google/gson/TypeAdapterFactory;)Lcom/google/gson/GsonBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/gson/GsonBuilder;->create()Lcom/google/gson/Gson;
+
+    move-result-object v0
+
+    const-class v1, Lcom/mmi/services/api/directions/WalkingOptions;
+
+    invoke-virtual {v0, p0, v1}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public abstract walkingSpeed()Ljava/lang/Double;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "walking_speed"
+    .end annotation
+.end method
+
+.method public abstract walkwayBias()Ljava/lang/Double;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "walkway_bias"
+    .end annotation
+.end method

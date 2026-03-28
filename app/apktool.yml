@@ -1,0 +1,26 @@
+version: 3.0.1
+apkFileName: ca-test.apk
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: 21
+  targetSdkVersion: 32
+versionInfo:
+  versionCode: 146
+  versionName: 2.6.6
+resourcesInfo:
+  packageId: 127
+doNotCompress:
+- arsc
+- gif
+- ogg
+- png
+- assets/dexopt/baseline.prof
+- assets/dexopt/baseline.profm
+- res/font/montserrat_black.ttf
+- res/font/montserrat_bold.ttf
+- res/font/montserrat_light.ttf
+- res/font/montserrat_medium.ttf
+- res/font/montserrat_thin.ttf
+- res/raw/keep.xml

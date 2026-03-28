@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="@dimen/cardview_corner_radius" />
+    <gradient android:startColor="@color/lightBlueTwo" android:endColor="@color/yellow" android:angle="45.0" android:centerColor="@color/green" />
+</shape>

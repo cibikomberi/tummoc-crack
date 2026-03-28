@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/nav_graph" app:startDestination="@id/action_home"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="@string/home" android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.HomeFragment" android:id="@id/action_home">
+        <action android:id="@id/action_action_home_to_action_trips" app:destination="@id/action_trips" app:enterAnim="@anim/slide_in_left" app:exitAnim="@anim/slide_out_right" app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right" app:popUpTo="@id/nav_graph" />
+    </fragment>
+    <fragment android:label="@string/trips" android:name="org.transhelp.bykerr.uiRevamp.ui.fragments.TripsFragment" android:id="@id/action_trips">
+        <action android:id="@id/action_action_trips_to_action_home" app:destination="@id/action_home" app:enterAnim="@anim/slide_in_left" app:exitAnim="@anim/slide_out_right" app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right" app:popUpTo="@id/nav_graph" />
+    </fragment>
+</navigation>

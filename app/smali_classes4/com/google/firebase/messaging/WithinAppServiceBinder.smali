@@ -1,0 +1,96 @@
+.class public Lcom/google/firebase/messaging/WithinAppServiceBinder;
+.super Landroid/os/Binder;
+.source "WithinAppServiceBinder.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/firebase/messaging/WithinAppServiceBinder$IntentHandler;
+    }
+.end annotation
+
+
+# instance fields
+.field public final intentHandler:Lcom/google/firebase/messaging/WithinAppServiceBinder$IntentHandler;
+
+
+# direct methods
+.method public static synthetic $r8$lambda$KeQvXLYwpp-1QT3-nBY6uqxpRNI(Lcom/google/firebase/messaging/WithinAppServiceConnection$BindRequest;Lcom/google/android/gms/tasks/Task;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/google/firebase/messaging/WithinAppServiceBinder;->lambda$send$0(Lcom/google/firebase/messaging/WithinAppServiceConnection$BindRequest;Lcom/google/android/gms/tasks/Task;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/firebase/messaging/WithinAppServiceBinder$IntentHandler;)V
+    .locals 0
+
+    .line 37
+    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+
+    .line 38
+    iput-object p1, p0, Lcom/google/firebase/messaging/WithinAppServiceBinder;->intentHandler:Lcom/google/firebase/messaging/WithinAppServiceBinder$IntentHandler;
+
+    return-void
+.end method
+
+.method public static synthetic lambda$send$0(Lcom/google/firebase/messaging/WithinAppServiceConnection$BindRequest;Lcom/google/android/gms/tasks/Task;)V
+    .locals 0
+
+    .line 55
+    invoke-virtual {p0}, Lcom/google/firebase/messaging/WithinAppServiceConnection$BindRequest;->finish()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public send(Lcom/google/firebase/messaging/WithinAppServiceConnection$BindRequest;)V
+    .locals 3
+
+    .line 46
+    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+
+    move-result v0
+
+    invoke-static {}, Landroid/os/Process;->myUid()I
+
+    move-result v1
+
+    if-ne v0, v1, :cond_0
+
+    .line 53
+    iget-object v0, p0, Lcom/google/firebase/messaging/WithinAppServiceBinder;->intentHandler:Lcom/google/firebase/messaging/WithinAppServiceBinder$IntentHandler;
+
+    iget-object v1, p1, Lcom/google/firebase/messaging/WithinAppServiceConnection$BindRequest;->intent:Landroid/content/Intent;
+
+    .line 54
+    invoke-interface {v0, v1}, Lcom/google/firebase/messaging/WithinAppServiceBinder$IntentHandler;->handle(Landroid/content/Intent;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/google/firebase/messaging/EnhancedIntentService$$ExternalSyntheticLambda1;
+
+    invoke-direct {v1}, Lcom/google/firebase/messaging/EnhancedIntentService$$ExternalSyntheticLambda1;-><init>()V
+
+    new-instance v2, Lcom/google/firebase/messaging/WithinAppServiceBinder$$ExternalSyntheticLambda0;
+
+    invoke-direct {v2, p1}, Lcom/google/firebase/messaging/WithinAppServiceBinder$$ExternalSyntheticLambda0;-><init>(Lcom/google/firebase/messaging/WithinAppServiceConnection$BindRequest;)V
+
+    .line 55
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnCompleteListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCompleteListener;)Lcom/google/android/gms/tasks/Task;
+
+    return-void
+
+    .line 47
+    :cond_0
+    new-instance p1, Ljava/lang/SecurityException;
+
+    const-string v0, "Binding only allowed within app"
+
+    invoke-direct {p1, v0}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method

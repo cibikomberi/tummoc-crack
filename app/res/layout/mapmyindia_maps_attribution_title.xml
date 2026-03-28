@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="14.0sp" android:textColor="#212121" android:gravity="center" android:id="@id/textTitle" android:paddingLeft="24.0dp" android:paddingRight="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeightSmall" android:text="@string/mapmyindia_maps_attributionsDialogTitle" android:textIsSelectable="false" android:textAllCaps="false"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

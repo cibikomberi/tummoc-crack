@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:left="72.0dp">
+        <shape android:shape="rectangle">
+            <size android:height="1.0dp" android:width="1.0dp" />
+            <solid android:color="@color/mapmyindia_plugins_material_grey_200" />
+        </shape>
+    </item>
+</layer-list>

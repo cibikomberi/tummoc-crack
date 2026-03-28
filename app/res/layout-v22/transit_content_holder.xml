@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/transit_content_holder_0" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:id="@id/transit_content_holder_cont_child_one" android:tag="binding_1" android:background="@drawable/shape_white_rounded" android:padding="@dimen/dp_12" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_8" android:layout_marginBottom="@dimen/dp_8" android:layout_marginVertical="@dimen/dp_8" app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/sp_16" android:textColor="@color/colorWhite" android:id="@id/appCompatTextView34" android:tag="binding_2" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" android:lineSpacingMultiplier="1.15" android:layout_marginEnd="@dimen/dp_16" app:fontFamily="@font/mazzard_m_medium" />
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/ivArrow" android:layout_width="@dimen/dp_20" android:layout_height="@dimen/dp_16" app:srcCompat="@drawable/ic_arrow_down" app:tint="@color/colorWhite" />
+    </LinearLayout>
+    <ScrollView android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/transit_content_holder_cont_child_two" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    </ScrollView>
+</LinearLayout>
