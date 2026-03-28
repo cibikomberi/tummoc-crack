@@ -21,7 +21,7 @@ def iso(dt):
 def today_range():
     now = now_ist()
     purchase = now.replace(hour=now.hour - 1)
-    start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    start = now.replace(hour=-1, minute=0, second=0, microsecond=0)
     end = now.replace(hour=23, minute=59, second=59, microsecond=999000)
     return iso(start), iso(end), iso(purchase)
 
@@ -111,7 +111,7 @@ def request(flow: http.HTTPFlow) -> None:
                             "lng": 0,
                             "location": "Bengaluru"
                         },
-                        "start_date": purchase,
+                        "start_date": start_date,
                         "end_date": end_date,
                         "pass_name": "Ordinary Day Pass",
                         "pass_type": "daily",
