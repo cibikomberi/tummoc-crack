@@ -1,0 +1,67 @@
+{
+  "plans": {
+    "gold_1000": {
+      "amount": 1000,
+      "autoApply": true,
+      "benefit": null,
+      "benefitDescription": "Valid in all non-AC buses",
+      "code": "GOLD1000",
+      "description": "Gold Ticket (Monthly)",
+      "documentsRequired": [
+        "ProfilePicture"
+      ],
+      "eligibility": true,
+      "id": "gold-unlimited-1000",
+      "maxDays": 30,
+      "maxTrips": null,
+      "name": "1000 Pass",
+      "offer": {
+        "offerDescription": "and more offers.. T&C apply",
+        "offerIds": [],
+        "offerSponsoredBy": [],
+        "offerTitle": "₹50 Cashback on BHIM App"
+      },
+      "originalAmount": 1000,
+      "savings": null,
+      "vehicleServiceTierType": [
+        "ORDINARY",
+        "NON_AC",
+        "SPECIAL",
+        "EXECUTIVE",
+        "EXPRESS"
+      ]
+    },
+    "diamond_2000": {
+      "amount": 2000,
+      "autoApply": true,
+      "benefit": null,
+      "benefitDescription": "Valid in all buses including AC",
+      "code": "DIAMOND2000",
+      "description": "Diamond Ticket (Monthly)",
+      "documentsRequired": [
+        "ProfilePicture"
+      ],
+      "eligibility": true,
+      "id": "diamond-unlimited-2000",
+      "maxDays": 30,
+      "maxTrips": null,
+      "name": "2000 Pass",
+      "offer": {
+        "offerDescription": "and more offers.. T&C apply",
+        "offerIds": [],
+        "offerSponsoredBy": [],
+        "offerTitle": "₹50 Cashback on BHIM App"
+      },
+      "originalAmount": 2000,
+      "savings": null,
+      "vehicleServiceTierType": [
+        "ORDINARY",
+        "NON_AC",
+        "SPECIAL",
+        "EXECUTIVE",
+        "EXPRESS",
+        "AC"
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "users": {
+    "cibikomberi@gmail.com": {
+      "email": "cibikomberi@gmail.com",
+      "customer_id": "67c66c50364bb94a5e5484e5",
+      "first_name": "CIBIVISHNU",
+      "last_name": "AC",
+      "gender": "Male",
+      "mobile": 7550357053,
+      "payment_contact": "+917550357053",
+      "payment_vpa": "7550357053@yescred",
+      "dob": "2004-08-03T00:00:00.000Z",
+      "city": "Bengaluru",
+      "current_location": {
+        "lat": 0,
+        "lng": 0,
+        "location": "Bengaluru"
+      },
+      "idCardNo": "1973",
+      "idCardType": "Aadhar Card",
+      "documents_photo": "photo_67c66c50364bb94a5e5484e5_1774673987288.jpg",
+      "profile_picture": "",
+      "multimodal_pass": {
+        "passNumber": "00048806"
+      },
+      "passes": [
+        {
+          "plan_id": "vajra_gold_day",
+          "pass_no": "TPASS476237027",
+          "is_active": true,
+          "is_discard": false
+        }
+      ]
+    }
+  }
+}

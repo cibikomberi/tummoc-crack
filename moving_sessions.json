@@ -1,0 +1,90 @@
+{
+  "sessions": {
+    "223ae850-e43f-456c-a2f2-de975701d0e5": {
+      "mobileNumber": "7550357053",
+      "mobileCountryCode": "+91",
+      "merchantId": "ANNA_APP",
+      "allowBlockedUserLogin": true,
+      "senderHash": "7S75in2y2Zx",
+      "updatedAt": "2026-03-31T19:15:28.818977Z"
+    },
+    "814cdc91-01f9-4014-944a-7c93001ea5c3": {
+      "mobileNumber": "7550357053",
+      "mobileCountryCode": "+91",
+      "merchantId": "ANNA_APP",
+      "allowBlockedUserLogin": true,
+      "senderHash": "7S75in2y2Zx",
+      "updatedAt": "2026-03-31T19:16:41.266996Z"
+    },
+    "7e5917a2-f3b6-43ce-bfc4-57695606423e": {
+      "mobileNumber": "7550357053",
+      "mobileCountryCode": "+91",
+      "merchantId": "ANNA_APP",
+      "allowBlockedUserLogin": true,
+      "senderHash": "7S75in2y2Zx",
+      "updatedAt": "2026-03-31T19:17:07.242670Z"
+    },
+    "5f437d5c-fad9-4049-8168-28ee3b5dbee3": {
+      "mobileNumber": "7550357053",
+      "mobileCountryCode": "+91",
+      "merchantId": "ANNA_APP",
+      "allowBlockedUserLogin": true,
+      "senderHash": "7S75in2y2Zx",
+      "updatedAt": "2026-03-31T19:17:17.478669Z"
+    },
+    "f86da74b-5fc9-4308-84a5-9a2bd3044a61": {
+      "mobileNumber": "7550357053",
+      "mobileCountryCode": "+91",
+      "merchantId": "ANNA_APP",
+      "allowBlockedUserLogin": true,
+      "senderHash": "7S75in2y2Zx",
+      "updatedAt": "2026-03-31T19:42:09.017583Z"
+    },
+    "ea57bcd1-2286-4569-89a3-9f9cb176aa25": {
+      "mobileNumber": "7550357053",
+      "mobileCountryCode": "+91",
+      "merchantId": "ANNA_APP",
+      "allowBlockedUserLogin": true,
+      "senderHash": "7S75in2y2Zx",
+      "updatedAt": "2026-03-31T19:51:01.984797Z"
+    },
+    "e2a5c6e2-8f57-4111-8cee-efa54c029e46": {
+      "mobileNumber": "7550357053",
+      "mobileCountryCode": "+91",
+      "merchantId": "ANNA_APP",
+      "allowBlockedUserLogin": true,
+      "senderHash": "7S75in2y2Zx",
+      "updatedAt": "2026-03-31T19:51:47.031301Z"
+    },
+    "e0cd6c83-8263-4d0f-9ade-5ce12d584159": {
+      "profileId": "f34be054-718b-4194-b37b-c4e303026634",
+      "maskedPhoneNumber": "755...053",
+      "updatedAt": "2026-03-31T20:00:21.951899Z"
+    },
+    "483f0cb4-a409-457c-89d7-ab2cf1c4d067": {
+      "profileId": "f34be054-718b-4194-b37b-c4e303026634",
+      "maskedPhoneNumber": "755...053",
+      "updatedAt": "2026-03-31T20:01:14.686674Z"
+    },
+    "2b48359a-e1fe-451e-8dd0-763a153f7556": {
+      "profileId": "f34be054-718b-4194-b37b-c4e303026634",
+      "maskedPhoneNumber": "755...053",
+      "updatedAt": "2026-03-31T20:05:22.441399Z"
+    },
+    "62285823-8688-4c86-ba0f-618013814c1d": {
+      "profileId": "f34be054-718b-4194-b37b-c4e303026634",
+      "maskedPhoneNumber": "755...053",
+      "updatedAt": "2026-03-31T20:06:32.123595Z"
+    },
+    "f4654be9-1808-42fb-b30b-3677e2a28c3d": {
+      "profileId": "f34be054-718b-4194-b37b-c4e303026634",
+      "maskedPhoneNumber": "755...053",
+      "updatedAt": "2026-03-31T20:07:46.464969Z"
+    },
+    "bc4ce479-8ad6-4525-bdad-5b281701f21f": {
+      "profileId": "f34be054-718b-4194-b37b-c4e303026634",
+      "maskedPhoneNumber": "755...053",
+      "updatedAt": "2026-03-31T20:09:54.371628Z"
+    }
+  }
+}
