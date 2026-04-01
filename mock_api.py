@@ -348,16 +348,13 @@ def get_moving_user(req: http.Request):
         return session_id, None, None
 
     profile_id = str(session.get("profileId", "")).strip()
-    masked_phone = str(session.get("maskedPhoneNumber", "")).strip()
     users = load_moving_users()
     profiles = users.get("profiles", {})
 
-    user = None
-    lookup_value = profile_id or masked_phone
-    if profile_id:
-        user = profiles.get(profile_id)
+    if not profile_id:
+        return session_id, None, None
 
-    return session_id, lookup_value, user
+    return session_id, profile_id, profiles.get(profile_id)
 
 
 def deep_merge(base, override):
@@ -375,12 +372,22 @@ def build_multimodal_pass(user):
     exp = now + timedelta(days=15)
     multimodal = deep_merge(DEFAULT_MULTIMODAL_PASS, user.get("multimodal_pass", {}))
     pass_details = user.get("pass_details")
-    if user.get("plan_id"):
-        plan = load_moving_pass_plans().get(user.get("plan_id"), {})
+    selected_plan_id = user.get("selected_pass_type") or user.get("plan_id")
+    if selected_plan_id:
+        plan = load_moving_pass_plans().get(selected_plan_id, {})
         pass_details = deep_merge(plan, pass_details or {}) if plan else pass_details
     if pass_details:
         multimodal["passEntity"]["passDetails"] = deep_merge(
             multimodal["passEntity"]["passDetails"], pass_details
+        )
+        multimodal["id"] = pass_details.get("id", multimodal.get("id"))
+        multimodal["passEntity"]["passType"] = deep_merge(
+            multimodal["passEntity"]["passType"],
+            {
+                "id": f"{pass_details.get('id', multimodal['passEntity']['passType']['id'])}-type",
+                "name": pass_details.get("name", multimodal["passEntity"]["passType"]["name"]),
+                "title": pass_details.get("name", multimodal["passEntity"]["passType"]["title"]),
+            },
         )
     multimodal["expiryDate"] = user.get("expiry_date", iso(exp).split("T")[0])
     multimodal["profilePicture"] = user.get("profile_picture", "")
@@ -503,12 +510,16 @@ def build_pass_response(user, pass_data, pass_no_override=None):
 
 def enrich_user_passes(user):
     plans = load_tummoc_pass_plans()
+    selected_plan_id = user.get("selected_pass_type")
     enriched = []
 
     for item in user.get("passes", []):
-        plan_id = item.get("plan_id")
+        plan_id = selected_plan_id or item.get("plan_id")
         plan = plans.get(plan_id, {}) if plan_id else {}
-        enriched.append(deep_merge(plan, item))
+        merged = deep_merge(plan, item)
+        if plan_id:
+            merged["plan_id"] = plan_id
+        enriched.append(merged)
 
     return enriched
 
@@ -586,15 +597,18 @@ def handle_moving_request(flow: http.HTTPFlow) -> bool:
                 404,
                 {
                     "status": False,
-                    "message": "No moving user mapped for session_id/profile",
+                    "message": "No moving user mapped for captured profile id",
                     "sessionId": session_id,
-                    "lookup": lookup_value,
+                    "profileId": lookup_value,
                 },
             )
             return True
 
-        ctx.log.info(f"MOVING MULTIMODAL PASS LIST MATCH {session_id} {lookup_value}")
-        flow.response = json_response(200, [build_multimodal_pass(user)])
+        ctx.log.info(f"MOVING MULTIMODAL PASS LIST MATCH1 {session_id} {lookup_value}")
+        a = build_multimodal_pass(user)
+        ctx.log.info(f"MOVING MULTIMODAL PASS LIST MATCH2 {session_id} {lookup_value}")
+        ctx.log.info(f"Built multimodal pass  {str(a)}")
+        flow.response = json_response(200, [a])
         return True
 
     return False
