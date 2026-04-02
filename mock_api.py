@@ -118,11 +118,17 @@ def iso(dt):
     return dt.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
 
 
-def today_range():
+def validity_range(pass_type=None):
     now = now_ist()
     purchase = now.replace(hour=max(now.hour - 1, 0))
     start = now.replace(hour=0, minute=0, second=0, microsecond=999000)
-    end = now.replace(hour=23, minute=59, second=59, microsecond=999000)
+    if pass_type == "monthly":
+        validity_end = start + timedelta(days=14)
+        end = validity_end.replace(hour=23, minute=59, second=59, microsecond=999000)
+        start = start - timedelta(days=15)
+        purchase = purchase - timedelta(days=15)
+    else:
+        end = now.replace(hour=23, minute=59, second=59, microsecond=999000)
     return iso(start), iso(end), iso(purchase)
 
 
@@ -395,8 +401,8 @@ def build_multimodal_pass(user):
 
 
 def build_pass_response(user, pass_data, pass_no_override=None):
-    start_date, end_date, purchase = today_range()
     pass_info = deep_merge(DEFAULT_PASS, pass_data)
+    start_date, end_date, purchase = validity_range(pass_info.get("pass_type"))
     pass_no = pass_no_override or pass_info["pass_no"]
     email = user.get("email", "")
     mobile = user.get("mobile", DEFAULT_PASS["mobile"])

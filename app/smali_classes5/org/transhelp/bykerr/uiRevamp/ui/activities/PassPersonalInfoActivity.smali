@@ -2521,122 +2521,126 @@
 .end method
 
 .method public final checkAndSetMonthlyPassStartDate()V
-    .locals 7
+    .locals 6
 
     .line 725
     sget-object v0, Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils;->Companion:Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils$Companion;
 
-    invoke-virtual {v0}, Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils$Companion;->getCurrentDateForAPI()Ljava/lang/String;
-
-    move-result-object v1
+    iget-object v1, p0, Lorg/transhelp/bykerr/uiRevamp/ui/activities/PassPersonalInfoActivity;->binding:Lorg/transhelp/bykerr/databinding/ActivityPassPersonalInfoBinding;
 
     const/4 v2, 0x0
 
-    .line 726
-    invoke-virtual {v0, v2}, Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils$Companion;->getCurrentMonthEndDateNumberOnly(I)Ljava/lang/String;
+    const-string v3, "binding"
 
-    move-result-object v3
+    if-nez v1, :cond_0
 
-    if-eqz v1, :cond_2
+    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    if-eqz v3, :cond_2
-
-    .line 730
-    :try_start_0
-    invoke-virtual {v0, v2}, Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils$Companion;->getCurrentMonthEndDateNum(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 731
-    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-virtual {v0, v2}, Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils$Companion;->getFlexiPassMonthEndDate(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 732
-    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils$Companion;->getFlexiPassMonthEndDateForAPI(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 734
-    iget-object v3, p0, Lorg/transhelp/bykerr/uiRevamp/ui/activities/PassPersonalInfoActivity;->binding:Lorg/transhelp/bykerr/databinding/ActivityPassPersonalInfoBinding;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    const/4 v4, 0x0
-
-    const-string v5, "binding"
-
-    if-nez v3, :cond_0
-
-    :try_start_1
-    invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    move-object v3, v4
+    move-object v1, v2
 
     :cond_0
-    iget-object v3, v3, Lorg/transhelp/bykerr/databinding/ActivityPassPersonalInfoBinding;->etPassValidityStart:Landroidx/appcompat/widget/AppCompatEditText;
+    iget-object v1, v1, Lorg/transhelp/bykerr/databinding/ActivityPassPersonalInfoBinding;->etPassValidityStart:Landroidx/appcompat/widget/AppCompatEditText;
 
     invoke-virtual {v0}, Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils$Companion;->getCurrentDateForBooking()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-virtual {v3, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 735
+    .line 726
     invoke-virtual {v0}, Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils$Companion;->getCurrentDateForAPI()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/transhelp/bykerr/uiRevamp/ui/activities/PassPersonalInfoActivity;->startDateForAPI:Ljava/lang/String;
 
-    .line 736
-    iget-object v0, p0, Lorg/transhelp/bykerr/uiRevamp/ui/activities/PassPersonalInfoActivity;->binding:Lorg/transhelp/bykerr/databinding/ActivityPassPersonalInfoBinding;
-
-    if-nez v0, :cond_1
-
-    invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_1
-    move-object v4, v0
-
-    :goto_0
-    iget-object v0, v4, Lorg/transhelp/bykerr/databinding/ActivityPassPersonalInfoBinding;->etPassValidityEnd:Landroidx/appcompat/widget/AppCompatEditText;
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 737
-    iput-object v1, p0, Lorg/transhelp/bykerr/uiRevamp/ui/activities/PassPersonalInfoActivity;->endDateForAPI:Ljava/lang/String;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_1
-
-    :cond_2
-    const v0, 0x7f130450
-
-    .line 742
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    .line 727
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    const-string v1, "getString(R.string.str_something_went_wrong)"
+    .line 728
+    const/16 v1, 0x1e
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {p0, v0, v1}, Lorg/transhelp/bykerr/uiRevamp/ui/activities/PassPersonalInfoActivity;->updatePassEndDateFromCalendar(Ljava/util/Calendar;I)V
 
-    invoke-virtual {p0, v0}, Lorg/transhelp/bykerr/uiRevamp/ui/activities/BaseActivity;->showToastShort(Ljava/lang/String;)V
+    return-void
+.end method
 
-    :catch_0
-    :goto_1
+.method public final updatePassEndDateFromCalendar(Ljava/util/Calendar;I)V
+    .locals 7
+
+    const-string v0, "startCalendar"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/Calendar;->setTimeInMillis(J)V
+
+    const/4 p1, 0x5
+
+    invoke-virtual {v0, p1, p2}, Ljava/util/Calendar;->add(II)V
+
+    sget-object p1, Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils;->Companion:Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils$Companion;
+
+    iget-object p2, p0, Lorg/transhelp/bykerr/uiRevamp/ui/activities/PassPersonalInfoActivity;->binding:Lorg/transhelp/bykerr/databinding/ActivityPassPersonalInfoBinding;
+
+    const/4 v1, 0x0
+
+    const-string v2, "binding"
+
+    if-nez p2, :cond_0
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+
+    move-object p2, v1
+
+    :cond_0
+    iget-object p2, p2, Lorg/transhelp/bykerr/databinding/ActivityPassPersonalInfoBinding;->etPassValidityEnd:Landroidx/appcompat/widget/AppCompatEditText;
+
+    invoke-virtual {p1}, Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils$Companion;->getSimpleDateFormatMonthName()Ljava/text/SimpleDateFormat;
+
+    move-result-object v3
+
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/text/Format;->format(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p1}, Lorg/transhelp/bykerr/uiRevamp/helpers/AppUtils$Companion;->getSimpleDateFormatNumbers()Ljava/text/SimpleDateFormat;
+
+    move-result-object p1
+
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Ljava/text/Format;->format(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lorg/transhelp/bykerr/uiRevamp/ui/activities/PassPersonalInfoActivity;->endDateForAPI:Ljava/lang/String;
+
     return-void
 .end method
 
