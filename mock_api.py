@@ -1,5 +1,6 @@
 import base64
 import json
+import mimetypes
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -7,6 +8,7 @@ from pathlib import Path
 from mitmproxy import ctx, http
 
 TUMMOC_HOSTS = {"dev-api.tummoc.in", "65.0.53.229"}
+MEDIA_HOSTS = {"bmtc-media.tummoc.in", "65.0.53.229"}
 MOVING_TECH_HOSTS = {"api.moving.tech", "65.0.144.48","13.206.45.123"}
 TARGET_PATH = "/pass/getPass"
 TARGET_METHOD = "POST"
@@ -14,11 +16,13 @@ VERIFY_PATH = "/default/tummoc_bmtc_pass_live"
 MOVING_AUTH_PATH = "/pilot/app/v2/auth"
 MOVING_PROFILE_PATH = "/pilot/app/v2/profile"
 MULTIMODAL_PASS_LIST_PATH = "/pilot/app/v2/multimodal/pass/list"
+MEDIA_DOCUMENT_PREFIX = "/document/"
 TUMMOC_USERS_PATH = Path(__file__).with_name("tummoc_users.json")
 TUMMOC_PASS_PLANS_PATH = Path(__file__).with_name("tummoc_pass_plans.json")
 MOVING_USERS_PATH = Path(__file__).with_name("moving_users.json")
 MOVING_PASS_PLANS_PATH = Path(__file__).with_name("moving_pass_plans.json")
 MOVING_SESSIONS_PATH = Path(__file__).with_name("moving_sessions.json")
+MEDIA_DOCUMENTS_PATH = Path(__file__).with_name("document")
 
 IST = timezone(timedelta(hours=5, minutes=30))
 
@@ -556,6 +560,46 @@ def is_moving_request(req: http.Request):
     return req.pretty_host in MOVING_TECH_HOSTS or req.host in MOVING_TECH_HOSTS
 
 
+def is_media_request(req: http.Request):
+    return req.pretty_host in MEDIA_HOSTS or req.host in MEDIA_HOSTS
+
+
+def media_file_response(path: Path) -> http.Response:
+    content_type, _ = mimetypes.guess_type(path.name)
+    return http.Response.make(
+        200,
+        path.read_bytes(),
+        {"Content-Type": content_type or "application/octet-stream"},
+    )
+
+
+def handle_media_request(flow: http.HTTPFlow) -> bool:
+    req = flow.request
+    path_only = req.path.split("?", 1)[0]
+
+    if req.method.upper() != "GET" or not path_only.startswith(MEDIA_DOCUMENT_PREFIX):
+        return False
+
+    filename = path_only[len(MEDIA_DOCUMENT_PREFIX) :].strip("/")
+    if not filename:
+        flow.response = json_response(400, {"status": False, "message": "Missing document filename"})
+        return True
+
+    local_path = (MEDIA_DOCUMENTS_PATH / filename).resolve()
+    documents_root = MEDIA_DOCUMENTS_PATH.resolve()
+
+    if documents_root not in local_path.parents or not local_path.is_file():
+        flow.response = json_response(
+            404,
+            {"status": False, "message": f"Local media file not found: {filename}"},
+        )
+        return True
+
+    ctx.log.info(f"MEDIA DOCUMENT MATCH {filename}")
+    flow.response = media_file_response(local_path)
+    return True
+
+
 def handle_moving_request(flow: http.HTTPFlow) -> bool:
     req = flow.request
     path_only = req.path.split("?", 1)[0]
@@ -624,12 +668,9 @@ def request(flow: http.HTTPFlow) -> None:
     req = flow.request
     path_only = req.path.split("?", 1)[0]
 
-    if is_moving_request(req):
-        if handle_moving_request(flow):
+    if is_media_request(req):
+        if handle_media_request(flow):
             return
-
-    if not is_tummoc_request(req):
-        return
 
     if req.method.upper() == "POST" and path_only == VERIFY_PATH:
         ctx.log.info("TUMMOC SELF VERIFY MATCH")
@@ -638,6 +679,14 @@ def request(flow: http.HTTPFlow) -> None:
             {"status": True, "message": "Self verification done successfully"},
         )
         return
+        
+    if is_moving_request(req):
+        if handle_moving_request(flow):
+            return
+
+    if not is_tummoc_request(req):
+        return
+
 
     email, user = get_tummoc_user(req)
     if path_only in {MULTIMODAL_PASS_LIST_PATH, TARGET_PATH} and not user:
