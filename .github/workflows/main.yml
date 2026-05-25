@@ -1,0 +1,33 @@
+name: AdGeist SSP pipeline (Beta)
+
+on:
+    workflow_dispatch: # Manual trigger
+        inputs:
+            branch:
+                description: 'Branch to deploy'
+                required: true
+                default: 'dev'
+                type: string
+
+jobs:
+    build:
+        runs-on: [self-hosted, Linux, X64, adgeistbg-beta]
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v6
+              with:
+                  ref: ${{ github.event.inputs.branch }}
+
+            - name: Copy GeoIp DB
+              run: |
+                cp -r ~/downloads/ipdb ~/actions-runner/_work/adgeist-ssp/adgeist-ssp/misc/ipdb
+
+
+            - name: Build docker 0image
+              run: |
+                  sudo docker build . -t ssp
+
+            - name: Start SSP services
+              run: |
+                  cd ~/adgeist-deployment && sudo docker compose up ssp -d
